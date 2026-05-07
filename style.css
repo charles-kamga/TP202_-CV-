@@ -6,14 +6,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:           #000000;
+  --bg:           #1a2a4a;
   --surface:      #ffffff;
-  --surface2:     #f1ece3c9;
-  --accent:       #3528a8d3;
-  --accent2:      #9d7c5f;
-  --text:         #2f2a24;
-  --muted:        #6d655e;
-  --border:       rgba(47,42,36,0.12);
+  --surface2:     #e0f2fe;
+  --accent:       #1e3a8a;
+  --accent2:      #0369a1;
+  --text:         #1e293b;
+  --muted:        #64748b;
+  --border:       rgba(30,58,138,0.12);
   --radius:       20px;
   --font-display: Georgia, 'Times New Roman', serif;
   --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -21,7 +21,7 @@
 
 
 body {
-  background: linear-gradient(180deg, #fbf7ef 0%, #f2eadc 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 50%, #1a2a4a 100%);
   color: var(--text);
   font-family: var(--font-body);
   min-height: 100vh;
