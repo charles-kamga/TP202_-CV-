@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trombinoscope — Notre Groupe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>Trombi<span>noscope</span></h1>
+      <p>GROUP 8 &nbsp;·&nbsp; (ICT202)</p>
+    </div>
+    <div class="member-count" id="memberCount">00</div>
+  </header>
+
+  <div class="toolbar">
+    <div class="search-box">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Rechercher un membre…" />
+    </div>
+    <div class="view-toggle">
+      <button class="view-btn active" data-view="grid">Grille</button>
+      <button class="view-btn" data-view="list">Liste</button>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

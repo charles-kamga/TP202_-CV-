@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Membre Numero81</title>
+  <!-- Le CSS est partagé : on remonte d'un niveau -->
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div class="member-page">
+
+    <!-- Bouton retour -->
+    <a class="back-btn" href="../index.html">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Retour au groupe
+    </a>
+
+    <!-- Language toggle -->
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- HERO -->
+    <div class="member-hero">
+      <div id="photoWrap"></div>
+
+      <div class="member-hero-info">
+        <div class="member-name"  id="heroName"></div>
+        <div class="member-role"  id="heroRole"></div>
+
+        <div class="member-info-grid" id="infoGrid"></div>
+
+        <p class="member-bio-short" id="heroBio"></p>
+
+        <div class="skills-wrap" id="heroSkills"></div>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" data-tab="profil">Profil</button>
+      <button class="tab-btn"        data-tab="parcours">Parcours scolaire</button>
+    </nav>
+
+    <!-- TAB : PROFIL -->
+    <div class="tab-panel active" id="tab-profil">
+      <div class="section-title">À propos</div>
+      <p id="fullBio" style="font-size:15px;line-height:1.8;color:var(--text);margin-bottom:36px"></p>
+
+      <div class="section-title">Compétences</div>
+      <div class="skills-wrap" id="skillsFull"></div>
+    </div>
+
+    <!-- TAB : PARCOURS -->
+    <div class="tab-panel" id="tab-parcours">
+
+      <div class="section-title">Expériences &amp; Formations</div>
+      <div class="timeline" id="timeline"></div>
+
+      <div class="section-title">Vidéo de présentation</div>
+      <video id="memberVideo" class="member-video" controls>
+        Votre navigateur ne supporte pas la vidéo HTML5.
+      </video>
+
+      <div class="section-title">Message audio</div>
+      <div class="audio-wrap">
+        <span class="audio-label">Écoute le message de <span id="audioName"></span></span>
+        <audio id="memberAudio" controls>
+          Votre navigateur ne supporte pas l'audio HTML5.
+        </audio>
+      </div>
+
+    </div>
+
+  </div><!-- /member-page -->
+
+  <!-- Données personnelles du membre -->
+  <script src="data.js"></script>
+
+  <!-- Logique d'affichage -->
+  <script>
+    let currentLang = 'fr';
+
+    /* ── Titre de l'onglet ── */
+    document.title = 'CV — ' + MEMBER.name;
+    document.documentElement.style.setProperty('--accent', MEMBER.color || '#c8f060');
+
+    /* ── Photo ── */
+    const photoWrap = document.getElementById('photoWrap');
+    const img = document.createElement('img');
+    img.className  = 'member-hero-photo';
+    img.src        = 'photo.jpg';
+    img.alt        = MEMBER.name;
+    img.onerror    = function () {
+      this.remove();
+      const ph = document.createElement('div');
+      ph.className   = 'member-hero-placeholder';
+      ph.style.color = MEMBER.color || '#c8f060';
+      ph.textContent = MEMBER.initials || '??';
+      photoWrap.appendChild(ph);
+    };
+    photoWrap.appendChild(img);
+
+    /* ── Fonction pour mettre à jour les textes selon la langue ── */
+    function updateTexts() {
+      const lang = currentLang;
+      const suffix = lang === 'en' ? '_en' : '';
+
+      document.getElementById('heroName').textContent = MEMBER['name' + suffix] || MEMBER.name;
+      document.getElementById('heroRole').textContent = MEMBER['role' + suffix] || MEMBER.role;
+      document.getElementById('heroBio').textContent  = MEMBER['bio' + suffix] || MEMBER.bio;
+      document.getElementById('fullBio').textContent  = MEMBER['bio' + suffix] || MEMBER.bio;
+      document.getElementById('audioName').textContent = (MEMBER['name' + suffix] || MEMBER.name).split(' ')[0];
+
+      /* Info grid */
+      const infoGrid = document.getElementById('infoGrid');
+      const labels = lang === 'en' ? ['Specialty', 'City', 'Email', 'Phone'] : ['Spécialité', 'Ville', 'Email', 'Téléphone'];
+      infoGrid.innerHTML = '';
+      [
+        { label: labels[0], value: MEMBER['specialty' + suffix] || MEMBER.specialty },
+        { label: labels[1], value: MEMBER['city' + suffix] || MEMBER.city },
+        { label: labels[2], value: MEMBER.email },
+        { label: labels[3], value: MEMBER.phone },
+      ].forEach(item => {
+        infoGrid.innerHTML += `
+          <div class="info-item">
+            <div class="info-item-label">${item.label}</div>
+            <div class="info-item-value">${item.value}</div>
+          </div>`;
+      });
+
+      /* Compétences */
+      function renderSkills(targetId) {
+        const el = document.getElementById(targetId);
+        el.innerHTML = '';
+        const skills = MEMBER['skills' + suffix] || MEMBER.skills || [];
+        skills.forEach(s => {
+          const span = document.createElement('span');
+          span.className   = 'skill-tag';
+          span.textContent = s;
+          el.appendChild(span);
+        });
+      }
+      renderSkills('heroSkills');
+      renderSkills('skillsFull');
+
+      /* Timeline parcours */
+      const timeline = document.getElementById('timeline');
+      timeline.innerHTML = '';
+      const parcours = MEMBER.parcours_scolaire || MEMBER.parcours || [];
+      parcours.forEach((entry, index) => {
+        const entryDiv = document.createElement('div');
+        entryDiv.className = 'timeline-entry';
+        entryDiv.dataset.time = entry.time || '00:00';
+        entryDiv.innerHTML = `
+          <div class="timeline-dot" style="background:${MEMBER.color || '#c8f060'}"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">${entry['title' + suffix] || entry.title}</div>
+            <div class="timeline-sub">${entry['sub' + suffix] || entry.sub}</div>
+            <div class="timeline-desc">${entry['desc' + suffix] || entry.desc}</div>
+          </div>
+        `;
+        entryDiv.addEventListener('click', () => {
+          const timeStr = entry.time || '00:00';
+          const [min, sec] = timeStr.split(':').map(Number);
+          const time = min * 60 + sec;
+          const video = document.getElementById('memberVideo');
+          const audio = document.getElementById('memberAudio');
+          if (video) video.currentTime = time;
+          if (audio) audio.currentTime = time;
+          // Switch to parcours tab
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          document.querySelector('[data-tab="parcours"]').classList.add('active');
+          document.getElementById('tab-parcours').classList.add('active');
+        });
+        timeline.appendChild(entryDiv);
+      });
+    }
+
+    /* ── Vidéo & Audio ── */
+    if (MEMBER.video) document.getElementById('memberVideo').src = MEMBER.video;
+    if (MEMBER.audio) document.getElementById('memberAudio').src = MEMBER.audio;
+
+    /* ── Language toggle ── */
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLang = btn.dataset.lang;
+        updateTexts();
+      });
+    });
+
+    /* ── Tabs ── */
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+
+        /* Pause médias quand on quitte l'onglet parcours */
+        if (btn.dataset.tab !== 'parcours') {
+          document.getElementById('memberVideo').pause();
+          document.getElementById('memberAudio').pause();
+        }
+      });
+    });
+
+    /* ── Initial update ── */
+    updateTexts();
+  </script>
+
+</body>
+</html>
