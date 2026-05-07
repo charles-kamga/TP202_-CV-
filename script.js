@@ -15,7 +15,7 @@
  */
 
 const MEMBERS = [
-  { folder: "Fossong-Patricia",  name: "Fossong Tsofack Patricia",  role: "Développeuse Front-end et UI/UX Designer", color: "#60c5f0", initials: "FP" },
+  { folder: "Fossong-Patricia",  name: "Fossong Tsofack Patricia",  role: "Développeuse Front-end et UI/UX Designer", color: "#1401e2", initials: "FP" },
   { folder: "alice-mbarga",  name: "Alice Mbarga",  role: "Développeuse Front-end",   color: "#c8f060", initials: "AM" },
   // Ajoute les autres membres ici :
   // { folder: "prenom-nom", name: "Prénom Nom", role: "Ton rôle", color: "#rrggbb", initials: "XX" },
