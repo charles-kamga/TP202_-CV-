@@ -41,15 +41,11 @@
       </div>
     </div>
 
-    <!-- TABS -->
-    <nav class="tabs-nav">
-      <button class="tab-btn active" data-tab="profil"><b>Profil</b></button>
-      <button class="tab-btn"        data-tab="parcours"><b>Parcours scolaire</b></button>
-    </nav>
-
-    <!-- TAB : PROFIL -->
-    <div class="tab-panel active" id="tab-profil">
-      <div class="section-title"><b>À propos</b></div>
+    <!-- CONTENU PROFIL -->
+    <div class="profile-content">
+      <div class="section-title" style="display:flex; align-items:center; gap:12px;">
+        <b>À propos</b>
+              </div>
       <p id="fullBio" style="font-size:15px;line-height:1.8;color:var(--text);margin-bottom:36px"></p>
 
       <div class="section-title"><b>Compétences</b></div>
@@ -57,10 +53,6 @@
 
       <div class="section-title"><b>Expériences &amp; Formations</b></div>
       <div class="timeline" id="timeline"></div>
-    </div>
-
-    <!-- TAB : PARCOURS -->
-    <div class="tab-panel" id="tab-parcours">
 
       <div class="section-title"><b>Vidéo de présentation</b></div>
       <video id="memberVideo" class="member-video" controls>
@@ -70,11 +62,7 @@
       <div class="section-title"><b>Message audio</b></div>
       <div class="audio-wrap">
         <span class="audio-label">Écoute le message de <span id="audioName"></span></span>
-        <audio id="memberAudio" controls>
-          Votre navigateur ne supporte pas l'audio HTML5.
-        </audio>
-      </div>
-
+              </div>
     </div>
 
   </div><!-- /member-page -->
@@ -115,7 +103,6 @@
       document.getElementById('heroRole').textContent = MEMBER['role' + suffix] || MEMBER.role;
       document.getElementById('heroBio').textContent  = MEMBER['bio' + suffix] || MEMBER.bio;
       document.getElementById('fullBio').textContent  = MEMBER['bio' + suffix] || MEMBER.bio;
-      document.getElementById('audioName').textContent = (MEMBER['name' + suffix] || MEMBER.name).split(' ')[0];
 
       /* Info grid */
       const infoGrid = document.getElementById('infoGrid');
@@ -165,27 +152,12 @@
             <div class="timeline-desc">${entry['desc' + suffix] || entry.desc}</div>
           </div>
         `;
-        entryDiv.addEventListener('click', () => {
-          const timeStr = entry.time || '00:00';
-          const [min, sec] = timeStr.split(':').map(Number);
-          const time = min * 60 + sec;
-          const video = document.getElementById('memberVideo');
-          const audio = document.getElementById('memberAudio');
-          if (video) video.currentTime = time;
-          if (audio) audio.currentTime = time;
-          // Switch to parcours tab
-          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-          document.querySelector('[data-tab="parcours"]').classList.add('active');
-          document.getElementById('tab-parcours').classList.add('active');
-        });
         timeline.appendChild(entryDiv);
       });
     }
 
     /* ── Vidéo & Audio ── */
     if (MEMBER.video) document.getElementById('memberVideo').src = MEMBER.video;
-    if (MEMBER.audio) document.getElementById('memberAudio').src = MEMBER.audio;
 
     /* ── Language toggle ── */
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -194,22 +166,6 @@
         btn.classList.add('active');
         currentLang = btn.dataset.lang;
         updateTexts();
-      });
-    });
-
-    /* ── Tabs ── */
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-
-        /* Pause médias quand on quitte l'onglet parcours */
-        if (btn.dataset.tab !== 'parcours') {
-          document.getElementById('memberVideo').pause();
-          document.getElementById('memberAudio').pause();
-        }
       });
     });
 

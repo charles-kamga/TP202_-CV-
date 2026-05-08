@@ -2,9 +2,13 @@ const MEMBER = {
 
   /* ── INFOS PERSONNELLES ── */
   name:      "Bipon samuel albert",           
+  name_en:   "Bipon Samuel Albert",
   role:      "Genie Logiciel",   
+  role_en:   "Software Engineer",
   specialty: "Ta spécialité détaillée",  
+  specialty_en: "Software Engineering Student",
   city:      "Yaounde",                 
+  city_en:   "Yaoundé",                 
   email:     "biponsamuel9@gmail.com",
   phone:     "+237 657222426",
   color:     "#152f87",   // Couleur accent (hex) — change-la à ton goût
@@ -37,6 +41,30 @@ conception de bases de données, l’utilisation de XAMPP ainsi que dans le dév
 Rigoureux et déterminé, je cherche continuellement à améliorer mes compétences techniques afin de devenir un ingénieur 
 logiciel compétent et capable de contribuer efficacement à des projets innovants. Je suis également intéressé par les 
 nouvelles technologies, le développement mobile, les systèmes informatiques et l’intelligence artificielle.`,
+  bio_en: `CURRICULUM VITAE
+BIPON SAMUEL ALBERT
+Phone: 657222426
+Email: biponsamuel9@gmail.com
+
+Residing in Yaoundé, I am currently a student in Bachelor 2 Software Engineering (GL) at University of Yaoundé I.
+Passionate about computer science and digital technologies, I am particularly interested in application development,
+programming, databases and modern IT solutions. Serious, dynamic and motivated, I have good adaptability and a strong
+learning spirit that allow me to progress quickly in technical fields.
+
+During my academic career, I obtained several diplomas including the Primary School Certificate (CEP),
+the First Cycle Secondary Education Certificate (BEPC), the Probatoire series D and the Advanced Level series D.
+These different trainings allowed me to acquire solid foundations in sciences, logic and analysis, essential skills
+in the field of software engineering and computer science.
+
+As part of my university training, I developed skills in programming and web development,
+particularly with HTML, CSS, JavaScript, PHP and MySQL technologies. I also have knowledge in
+database design, XAMPP usage and dynamic web application development.
+I have already worked on several academic projects related to IT management, which allowed me to strengthen
+my problem-solving abilities, organization and teamwork.
+
+Rigorous and determined, I continuously seek to improve my technical skills to become a competent software engineer
+capable of effectively contributing to innovative projects. I am also interested in new technologies, mobile development,
+computer systems and artificial intelligence.`,
 
   /* ── COMPÉTENCES ── */
   /* Liste tes compétences séparées par des virgules */
@@ -50,6 +78,17 @@ nouvelles technologies, le développement mobile, les systèmes informatiques et
     "CANVA",
     "Adobe Photoshop"
     // Ajoute autant que tu veux...
+  ],
+  skills_en: [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Git",
+    "Responsive Design",
+    "Figma",
+    "CANVA",
+    "Adobe Photoshop"
+    // Add as many as you want...
   ],
 
   /* ── PARCOURS ── */

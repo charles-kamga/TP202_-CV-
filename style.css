@@ -500,6 +500,29 @@ header {
   margin-bottom: 14px;
 }
 
+.read-bio-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.read-bio-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.read-bio-btn:active {
+  transform: scale(0.95);
+}
+
 /* COMPÉTENCES */
 .skills-wrap {
   display: flex;
