@@ -15,6 +15,10 @@ name:      "SERENA MELI DOUNTIO",           // Ex: "Alice Mbarga"
 name_en:   "SERENA MELI DOUNTIO",     // English version
 role:      "Etudiante en securite informatique",   // Ex: "Développeuse Front-end"
 role_en:   "cybersecurity student",   // English version
+Matricule:"24H2209",
+Matricule_en:"24H2209",
+Numero:"85",
+Number_en:"85",
 specialty: "Sécurité des Réseaux/Cyberdéfense/HTML/CSS/JAVASCRIPT",  // Ex: "HTML / CSS / JavaScript"
 specialty_en: "Network Security/Cyberdefense/HTML/CSS/JAVASCRIPT", // English
 city:      "YAOUNDE",                 // Ex: "Yaoundé"
