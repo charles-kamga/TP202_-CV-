@@ -18,7 +18,11 @@ const MEMBER = {
   name:      "FOSSONG TSOFACK PATRICIA",           // Ex: "Alice Mbarga"
   name_en:   "FOSSONG TSOFACK PATRICIA",           // English version
   role:      "Développeuse Front-end et UI/UX Designer",   // Ex: "Développeuse Front-end"
-  role_en:   "Front-end Developer and UI/UX Designer",     // English
+  role_en:   "Front-end Developer and UI/UX Designer",  
+  matricule: "24G2975", 
+  matricule_en: "24G2975",
+  number:"membre 81 du groupe 8",
+  number_en: "member 81 of group 8",
   specialty: "Génie Logiciel",  // Ex: "HTML / CSS / JavaScript"
   specialty_en: "Software Engineering", // English
   city:      "Yaoundé",                 // Ex: "Yaoundé"
