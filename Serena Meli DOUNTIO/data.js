@@ -79,4 +79,4 @@ bio_en: `Passionate student in Second Year of Computer Security at the Universit
   /* Laisse les chemins tels quels si tu as bien nommé tes fichiers */
   video: "video.mp4",   // Vidéo de présentation (place le fichier ici)
   audio: "audio.mp3",   // Message audio          (place le fichier ici)
-}; dis moi bien comment je dois mettre la photo etape par etape
+}; 
