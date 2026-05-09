@@ -18,14 +18,14 @@ role_en:   "cybersecurity student",   // English version
 Matricule:"24H2209",
 Matricule_en:"24H2209",
 Numero:"Membre 85 ",
-Number_en:"Membre 85",
+Number_en:"Member 85",
 specialty: "Sécurité des Réseaux/Cyberdéfense/HTML/CSS/JAVASCRIPT",  // Ex: "HTML / CSS / JavaScript"
 specialty_en: "Network Security/Cyberdefense/HTML/CSS/JAVASCRIPT", // English
 city:      "YAOUNDE",                 // Ex: "Yaoundé"
 city_en:   "YAOUNDE",                // English
 email:     "serenamelidountio@gmail.com",
 phone:     "+237 670261601",
-color:     "#c8f060",   // Couleur accent (hex) — change-la à ton goût
+color:     "#0519f6",   // Couleur accent (hex) — change-la à ton goût
 initials:  "DM",        // Tes initiales (2 lettres) si pas de photo
 /* ── À PROPOS ── */
 bio: `Étudiante passionnée en Licence 2 Sécurité Informatique à l'Université de Yaoundé I.

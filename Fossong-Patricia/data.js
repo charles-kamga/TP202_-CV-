@@ -29,7 +29,7 @@ const MEMBER = {
   city_en:   "Yaoundé",                 // English
   email:     "fossongpatricia@gmail.com",
   phone:     "+237 679 31 90 03",
-  color:     "#3959e7",   // Couleur accent (hex) — change-la à ton goût
+  color:     "#0606f7",   // Couleur accent (hex) — change-la à ton goût
   initials:  "FP",        // Tes initiales (2 lettres) si pas de photo
 
   /* ── À PROPOS ── */

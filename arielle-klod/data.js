@@ -25,7 +25,7 @@ city:      "YAOUNDE",                 // Ex: "Yaoundé"
 city_en:   "YAOUNDE",                // English
 email:     "happiklod@gmail.com",
 phone:     "+237 673390383",
-color:     "#fff",   // Couleur accent (hex) — change-la à ton goût
+color:     "#1403ff",   // Couleur accent (hex) — change-la à ton goût
 initials:  "KA",        // Tes initiales (2 lettres) si pas de photo
 /* ── À PROPOS ── */
 bio: `Étudiante en Licence 2 Sécurité Informatique à l'Université de Yaoundé I.

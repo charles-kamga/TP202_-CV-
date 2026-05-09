@@ -11,7 +11,7 @@ const MEMBER = {
   city_en:   "Yaoundé",                 
   email:     "biponsamuel9@gmail.com",
   phone:     "+237 657222426",
-  color:     "#152f87",   // Couleur accent (hex) — change-la à ton goût
+  color:     "#082b9e",   // Couleur accent (hex) — change-la à ton goût
   initials:  "BI",        // Tes initiales (2 lettres) si pas de photo
 
   /* ── À PROPOS ── */

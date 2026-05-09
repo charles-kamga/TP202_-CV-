@@ -25,7 +25,7 @@ const MEMBER = {
   city_en:   "Yaoundé",
   email:     "ryanfonkou@icloud.com",
   phone:     "+237 655860481",
-  color:     "#c8f060",   // Couleur accent (hex) — change-la à ton goût
+  color:     "#0637f8",   // Couleur accent (hex) — change-la à ton goût
   initials:  "RF",        // Tes initiales (2 lettres) si pas de photo
 
   /* ── À PROPOS ── */

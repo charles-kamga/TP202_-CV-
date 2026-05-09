@@ -26,7 +26,7 @@ const MEMBER = {
   email:     "charleskamgapr@gmail.com",
   phone:     "+237 654175725",
   website:   "https://www.charleskamga.me/",
-  color:     "#c8f060",   // Couleur accent (hex) — change-la à ton goût
+  color:     "#0411fa",   // Couleur accent (hex) — change-la à ton goût
   initials:  "CK",        // Tes initiales (2 lettres) si pas de photo
 
   /* ── À PROPOS ── */
