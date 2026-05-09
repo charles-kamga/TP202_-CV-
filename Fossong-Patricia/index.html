@@ -121,17 +121,35 @@
       const infoGrid = document.getElementById('infoGrid');
       const labels = lang === 'en' ? ['Specialty', 'City', 'Email', 'Phone'] : ['Spécialité', 'Ville', 'Email', 'Téléphone'];
       infoGrid.innerHTML = '';
-      [
-        { label: labels[0], value: MEMBER['specialty' + suffix] || MEMBER.specialty },
-        { label: labels[1], value: MEMBER['city' + suffix] || MEMBER.city },
-        { label: labels[2], value: MEMBER.email },
-        { label: labels[3], value: MEMBER.phone },
-      ].forEach(item => {
-        infoGrid.innerHTML += `
-          <div class="info-item">
-            <div class="info-item-label">${item.label}</div>
-            <div class="info-item-value">${item.value}</div>
-          </div>`;
+      const possibleFields = [
+        { key: 'specialty', labelFr: 'Spécialité', labelEn: 'Specialty' },
+        { key: 'city', labelFr: 'Ville', labelEn: 'City' },
+        { key: 'Matricule', labelFr: 'Matricule', labelEn: 'Matricule', altKeys: ['matricule'] },
+        { key: 'Numero', labelFr: 'Numéro', labelEn: 'Number', altKeys: ['Number', 'number'] },
+        { key: 'email', labelFr: 'Email', labelEn: 'Email' },
+        { key: 'phone', labelFr: 'Téléphone', labelEn: 'Phone' },
+        { key: 'website', labelFr: 'Site web', labelEn: 'Website', isLink: true },
+      ];
+      possibleFields.forEach(field => {
+        let value = MEMBER[field.key + suffix] || MEMBER[field.key];
+        if (!value && field.altKeys) {
+          for (const alt of field.altKeys) {
+            value = MEMBER[alt + suffix] || MEMBER[alt];
+            if (value) break;
+             }
+        }
+        if (value) {
+          const label = lang === 'en' ? field.labelEn : field.labelFr;
+          let displayValue = value;
+          if (field.isLink && value) {
+            displayValue = `<a href="${value}" target="_blank" style="color:var(--accent);text-decoration:none;">${value.replace(/^https?:\/\//, '')}</a>`;
+          }
+          infoGrid.innerHTML += `
+            <div class="info-item">
+              <div class="info-item-label">${label}</div>
+              <div class="info-item-value">${displayValue}</div>
+            </div>`;
+        }
       });
 
       /* Compétences */

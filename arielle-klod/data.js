@@ -18,7 +18,7 @@ role_en:   "cybersecurity student",   // English version
 Matricule:"24G2523",
 Matricule_en:"24G2523",
 Numero:"Membre 87 ",
-Number_en:"Membre 87",
+Number_en:"Member 87",
 specialty: "Sécurité des Réseaux informatique",  // Ex: "HTML / CSS / JavaScript"
 specialty_en: "Network Security", // English
 city:      "YAOUNDE",                 // Ex: "Yaoundé"
