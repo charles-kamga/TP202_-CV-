@@ -198,7 +198,7 @@ header {
   font-weight: 700;
 }
 
-.card-body { padding: 24px; }
+.card-body { padding: 16px; }
 
 .card-name {
   font-family: var(--font-display);
@@ -233,9 +233,9 @@ header {
 .tag {
   background: #972fc7;
   border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 3px 10px;
-  font-size: 11px;
+  border-radius: 30px;
+  padding: 3px 8px;
+  font-size: 12px;
   color: var(--muted);
   font-weight: 300;
 }
@@ -254,7 +254,7 @@ header {
   gap: 8px;
   background: var(--accent);
   border: none;
-  border-radius: 4px;
+  border-radius: 30px;
   padding: 9px 18px;
   color: #ffffff;
   font-family: var(--font-body);
