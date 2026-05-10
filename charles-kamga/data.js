@@ -30,8 +30,12 @@ const MEMBER = {
   initials:  "CK",        // Tes initiales (2 lettres) si pas de photo
 
   /* ── À PROPOS ── */
-  bio: `Étudiant passionné par la cybersécurité offensive et le développement web. Je consacre mon temps libre à résoudre des challenges sur Hack The Box et à approfondir mes connaissances en pentesting WiFi et audit d'applications web. Curieux et autodidacte, j'aime apprendre en pratiquant et partager mes découvertes avec mes pairs.`,
-  bio_en: `Passionate student focused on offensive cybersecurity and web development. I dedicate my free time to solving challenges on Hack The Box and deepening my knowledge in WiFi penetration testing and web application auditing. Curious and self-taught, I enjoy learning by doing and sharing discoveries with peers.`,
+  bio: `Étudiant passionné par la cybersécurité offensive et le développement web. Je consacre mon temps libre à résoudre des challenges sur Hack The Box et à approfondir mes connaissances en pentesting WiFi et audit d'applications web. Curieux et autodidacte, j'aime apprendre en pratiquant et partager mes découvertes avec mes pairs.
+
+En dehors de l'informatique, je suis également amateur d'échecs, passionné de musique et j'aime m'adonner à l'écriture.`,
+  bio_en: `Passionate student focused on offensive cybersecurity and web development. I dedicate my free time to solving challenges on Hack The Box and deepening my knowledge in WiFi penetration testing and web application auditing. Curious and self-taught, I enjoy learning by doing and sharing discoveries with peers.
+
+Outside of computing, I am also a chess enthusiast, passionate about music, and enjoy writing.`,
 
   /* ── COMPÉTENCES ── */
   /* Liste tes compétences séparées par des virgules */
